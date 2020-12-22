@@ -66,7 +66,7 @@ for team ∈ teams
     savefig("form/$(league_name)/$(team)_form.png")
 end
 
-plt = plot(size = (2000, 1000), legend=:outertopright, title="Form Comparison", xlabel="Matches", ylabel="Form Index")
+plt = plot(size = (2000, 1000), legend=:outertopright, title="Form Comparison $(league_name)", xlabel="Matches", ylabel="Form Index")
 for team ∈ teams
     plot!(plt, map(x -> x.date, games[team]), results[team].first, ribbon=2 .* results[team].second, fillalpha=0.15, labels=team)
 end
@@ -74,9 +74,10 @@ display(plt)
 savefig("form/$(league_name)/all_form.png")
 
 plotlyjs()
-plt = plot(size = (1500, 750), legend=:outertopright, title="Form Comparison", xlabel="Matches", ylabel="Form Index")
+plt = plot(size = (1500, 750), legend=:outertopright, title="Form Comparison $(league_name)", xlabel="Matches", ylabel="Form Index")
 for team ∈ teams
     plot!(plt, map(x -> x.date, games[team]), results[team].first, ribbon=2 .* results[team].second, fillalpha=0.15, labels=team)
 end
 display(plt)
 savefig("form/$(league_name)/all_form.html")
+savefig("docs/all_form_$(replace(league_name, " " => "")).html")
