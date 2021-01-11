@@ -49,7 +49,6 @@ teams = [team for team ∈ keys(games)]
 pbar = Progress(length(teams))
 Threads.@threads for team ∈ teams
     N = 500
-
     g = NUTS()
     samples = sample(form_model(discounted_score.(games[team])), g, N);
 
