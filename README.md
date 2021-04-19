@@ -1,1 +1,1 @@
-football-form
+The GitHub Pages for this repo provides the comparative analysis for the forms of various football clubs in the top 5 leagues + European competitions. The core model is essentially a particle tracking method that is akin to the Kalman filter.
