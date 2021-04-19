@@ -17,4 +17,6 @@ for league ∈ leagues
     log_all_plots(results, games, league)
 end
 
-run(`git add -A && git commit -a -m "Finished Run" && git push`)
+run(`git add -A`)
+run(`git commit -a -m "Finished Run"`)
+run(`git push`)
